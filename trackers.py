@@ -26,7 +26,7 @@ api_rem_trackers="http://localhost:8080/api/v2/torrents/removeTrackers"
 stable_trackers="https://newtrackon.com/api/stable"
 
 ################# DO NOT EDIT BELOW THIS LINE #################
-parser=argparse.ArgumentParser(description="A very simple python script for qBittorrent which uses the WebUI API to automatically add new stable trackers (list downloaded from newtrackon.com) to existing torrents. Created by Red Squirrel (@redsquirrel87) - https://redsquirrel87.com
+parser=argparse.ArgumentParser(description="A very simple python script for qBittorrent which uses the WebUI API to automatically add new stable trackers (list downloaded from newtrackon.com) to existing torrents. Created by Red Squirrel (@redsquirrel87) - https://redsquirrel87.com")
 parser.add_argument("--ipv6",action='store_true',help="include ipv6 only trackers in the list downloaded from newtrackon.com")
 parser.add_argument("--ipv4",action='store_true',help="include ipv4 only trackers in the list downloaded from newtrackon.com")
 parser.add_argument("-d","--downloading",action='store_true',help="add trackers only to torrents currently downloading")
