@@ -7,25 +7,25 @@ import sys
 import json
 import argparse
 
-######################### Login data ##########################
-##          Please edit the two following variables          ##
-##     with your qBittorrent WebUI username and password     ##
+######################### Custom data #########################
+##          Please edit the five following variables         ##
+##        with your qBittorrent WebUI custom settings        ##
 ###############################################################
 user="username"
 pswd="password"
-
-####################### WebUI API URLs ########################
-##       Please edit the following URLs by replacing         ##
-##     localhost with the IP of your qBittorrent WebUI       ##
-###############################################################
-api_login="http://localhost:8080/api/v2/auth/login"
-api_get_torrents="http://localhost:8080/api/v2/torrents/info"
-api_get_trackers="http://localhost:8080/api/v2/torrents/trackers"
-api_add_trackers="http://localhost:8080/api/v2/torrents/addTrackers"
-api_rem_trackers="http://localhost:8080/api/v2/torrents/removeTrackers"
-stable_trackers="https://newtrackon.com/api/stable"
+host="localhost"
+protocol="http"
+port="8080"
 
 ################# DO NOT EDIT BELOW THIS LINE #################
+
+api_login=protocol+"://"+host+":"+port+"/api/v2/auth/login"
+api_get_torrents=protocol+"://"+host+":"+port+"/api/v2/torrents/info"
+api_get_trackers=protocol+"://"+host+":"+port+"/api/v2/torrents/trackers"
+api_add_trackers=protocol+"://"+host+":"+port+"/api/v2/torrents/addTrackers"
+api_rem_trackers=protocol+"://"+host+":"+port+"/api/v2/torrents/removeTrackers"
+stable_trackers="https://newtrackon.com/api/stable"
+
 parser=argparse.ArgumentParser(description="A very simple python script for qBittorrent which uses the WebUI API to automatically add new stable trackers (list downloaded from newtrackon.com) to existing torrents. Created by Red Squirrel (@redsquirrel87) - https://redsquirrel87.com")
 parser.add_argument("--ipv6",action='store_true',help="include ipv6 only trackers in the list downloaded from newtrackon.com")
 parser.add_argument("--ipv4",action='store_true',help="include ipv4 only trackers in the list downloaded from newtrackon.com")
