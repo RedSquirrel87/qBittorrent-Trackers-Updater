@@ -108,11 +108,17 @@ else:
                                 remove_trackers=requests.get(api_rem_trackers,data).status_code
                                 if remove_trackers == 200 :
                                         print (str(len(rem_list)) + " not working trackers removed successfully for this torrent.")
+                                else :
+                                        print ("ERROR!")
+                        else :
+                                print ("        All the trackers of this torrent are currently working, no need to remove any of them.")
                 print ("        Adding the new stable trackers to the torrent...",end=" ")
                 data={"hash":torrent["hash"],"urls":trackers}
                 add_trackers=requests.post(api_add_trackers,data).status_code
                 if add_trackers == 200 :
                         print ("SUCCESS!")
+                else :
+                        print ("ERROR!")
 print ("")
 print ("Procedure completed, bye bye!")
                                
