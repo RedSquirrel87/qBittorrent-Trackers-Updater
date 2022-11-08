@@ -77,7 +77,14 @@ if args.tag :
 else:
         tag = ""
 print ("Getting torrents list...",end=" ")
-data={"filter":"&".join(filter),"category":cat,"tag":tag}
+data={}
+if len(filter) > 0:
+       data["filter"]="&".join(filter)
+if len(cat) > 0:
+       data["category"]=cat
+if len(tag) > 0:
+       data["tag"]=tag
+#data={"filter":"&".join(filter),"category":cat,"tag":tag}
 result=requests.get(api_get_torrents,data).text
 json_data=json.loads(result)
 torrents=len(json_data)
